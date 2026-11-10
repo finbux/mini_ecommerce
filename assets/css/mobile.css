@@ -1,0 +1,34 @@
+@media (max-width: 767px) {
+    /* Aligne les 3 blocs verticalement les uns sous les autres */
+    .container-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px; /* Augmente l'espace entre chaque bloc empilé */
+        text-align: center; /* Centre tout le texte par défaut */
+    }
+
+    /* Force chaque bloc à prendre toute la largeur disponible */
+    .container-footer > div {
+        width: 100%;
+    }
+
+    /* Recentrage complet du bloc de gauche (Réseaux) */
+    .socials {
+        text-align: center;
+    }
+
+    /* Ajustement du bloc du milieu (Liens légaux) */
+    .legal ul {
+        flex-direction: column; /* Empile aussi les liens légaux sur mobile */
+        gap: 10px;
+    }
+
+    /* Recentrage complet du bloc de droite (Paiements) */
+    .purchase {
+        text-align: center;
+    }
+
+    .purchase .fa-brands {
+        margin: 0 10px; /* Aligne et espace proprement les icônes de paiement au centre */
+    }
+}
