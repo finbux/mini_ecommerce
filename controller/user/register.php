@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
 
     if (!preg_match($password_regex, $pwdSaisi)) {
-        $erreurs['pwd'] = 'Le mot de passe doit contenir au moins 8 caractères, avec une minuscule, une majuscule et un chiffre.';
+        $erreurs['password'] = 'Le mot de passe doit contenir au moins 8 caractères, avec une minuscule, une majuscule et un chiffre.';
     }
 
     if($pwdSaisi !== $mdp2){

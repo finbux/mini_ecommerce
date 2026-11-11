@@ -23,7 +23,14 @@
                         <div class="product-profile-card"> 
 
                             <img
-                                src="assets/uploads/<?= htmlspecialchars($produit['image']) ?>"
+                            <?php if(is_null($produit['image'])){
+                                echo' src="assets/img/no-image.png"';
+                            }
+                            else{
+                                echo' src="assets/uploads/'.$produit['image'].'"';
+                            }
+                            ?>   
+                                width="150"
                                 alt="<?= htmlspecialchars($produit['nom']) ?>"
                                 class="img-fluid"
                             >

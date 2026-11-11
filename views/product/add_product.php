@@ -21,7 +21,7 @@
                     placeholder="Ex : Casque Bluetooth"
                     maxlength="150"
                     required
-                    class="form-control"
+                    class="form-control <?= isset($erreurs['nom']) ? ' is-invalid' : '' ; ?>"
                                 <?php if (isset($erreurs['nom'])): ?>aria-invalid="true" aria-describedby="nom-erreur"<?php endif; ?>>
                                 <?php if (isset($erreurs['nom'])): ?>
                                 <div id="nom-erreur" class="invalid-feedback"><?= htmlspecialchars($erreurs['nom']) ?></div>
@@ -39,7 +39,7 @@
                     min="0.01"
                     step="0.01"
                     required
-                    class="form-control"
+                    class="form-control <?= isset($erreurs['prix']) ? ' is-invalid' : '' ; ?>"
                                 <?php if (isset($erreurs['prix'])): ?>aria-invalid="true" aria-describedby="nom-erreur"<?php endif; ?>>
                                 <?php if (isset($erreurs['prix'])): ?>
                                 <div id="nom-erreur" class="invalid-feedback"><?= htmlspecialchars($erreurs['prix']) ?></div>
@@ -65,7 +65,7 @@
                     type="file"
                     name="image"
                     accept="image/jpeg,image/png,image/webp",
-                    class="form-control"
+                    class="form-control  <?= isset($erreurs['image']) ? ' is-invalid' : '' ; ?>"
                                 <?php if (isset($erreurs['image'])): ?>aria-invalid="true" aria-describedby="nom-erreur"<?php endif; ?>>
                                 <?php if (isset($erreurs['image'])): ?>
                                 <div id="nom-erreur" class="invalid-feedback"><?= htmlspecialchars($erreurs['image']) ?></div>

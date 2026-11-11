@@ -61,6 +61,18 @@
                     </ul>
             </nav>
     </header>
+    <?php 
+  if(isset($_SESSION['message'])){
+    echo "<div class=\"container alert alert-".$_SESSION['type_message']." role=\"alert\">";
+    echo "<p>".$_SESSION['message']."</p>";
+    echo "</div>";
+
+    unset($_SESSION['message']);
+    unset($_SESSION['type_message']);
+
+  }
+
+?>
     <main class="container-fluid flex-grow-1"">
 
     

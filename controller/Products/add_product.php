@@ -30,7 +30,7 @@ if (isset($_SESSION['user'])) {
         $erreurs['nom'] = 'Le pseudo est obligatoire.';
         }
          if ($prix_input === '') {
-        $erreurs['prix'] = 'Le pseudo est obligatoire.';
+        $erreurs['prix'] = 'Le prix est obligatoire.';
         }
 
         $destination = "assets/uploads/";
@@ -63,7 +63,7 @@ if (isset($_SESSION['user'])) {
             if ($file['error'] !== UPLOAD_ERR_OK) {
                 $_SESSION['message'] = "Une erreur est survenue lors de l'envoi de la photo.";
                 $_SESSION['type_message'] = "danger";
-                die('pl');
+                
                 header("Location: ?route=add_product");
                 exit;   
             }
@@ -87,22 +87,7 @@ if (isset($_SESSION['user'])) {
 
         if($id !== '')
             {
-                    if(update($id,$titre_article,$auteur,$date,$description,$fileName))
-                    {
-                        $_SESSION['message'] = "Bravo, votre recette a été bien modifiée.";
-                        $_SESSION['type_message'] = "success";
-
-                        header("Location: index.php");
-                        exit;
-                    }
-                    else
-                    {
-                        $_SESSION['message'] = "Oups, votre recette n'a pas été modifiée.";
-                        $_SESSION['type_message'] = "danger";
-
-                        header("Location: ?route=create");
-                        exit;
-                    }
+                   //Modifier produit
             }
             else
             {
@@ -117,10 +102,8 @@ if (isset($_SESSION['user'])) {
                     {
                         $_SESSION['message'] = "Erreur dans l'ajout du produit";
                         $_SESSION['type_message'] = 'danger';
-                        die('ok');  
+                    
                         header('location:?route=add_product');
-
-
                     }    
             }
                                    
