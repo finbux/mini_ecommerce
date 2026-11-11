@@ -18,20 +18,7 @@
    cd mini_ecommerce
    ```
 
-2. **Configurer l'environnement**
 
-   Copier le fichier d'exemple puis renseigner les valeurs :
-
-   ```bash
-   cp .env.example .env   # À ADAPTER si le projet n'utilise pas de .env
-   ```
-
-   ```env
-   DB_HOST=localhost
-   DB_NAME=<NOM_DE_LA_BASE>
-   DB_USER=<UTILISATEUR>
-   DB_PASSWORD=<MOT_DE_PASSE>
-   ```
 
 3. **Créer la base de données**
 
