@@ -43,7 +43,7 @@
                                 <?= number_format($produit['prix'], 2, ',', ' ') ?> €
                             </p>
                             <button type="button" class="btn btn-primary" data-bs-toggle="dialog" data-bs-target="#">
-                                    Modifier
+                                 <a href="?route=update_product&id= <?= htmlspecialchars($produit['id']) ?>" style="color: white"> Modifier</a>  
                             </button>
                             <button type="button" class="btn btn-danger" data-bs-toggle="dialog" data-bs-target="#deleteDialog">
                                     Supprimer

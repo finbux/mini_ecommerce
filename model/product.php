@@ -66,6 +66,25 @@ function findByUser($user){
     return $data;   
 }
 
+function updateProduit($id,$nom,$prix,$description,$image){
+
+    $db = connectToDatabase();
+    
+    $sql = "UPDATE produit
+            SET nom = :nom, prix = :prix, description = :description, image = :image
+            WHERE id = :id";
+
+    $req = $db->prepare($sql);
+
+    return $req->execute([
+        ':nom'         => $nom,
+        ':prix'        => $prix,
+        ':description' => $description,
+        ':image'       => $image,
+        ':id'          => $id,
+    ]);
+}
+
 function delete($id){
 
     $db = connectToDatabase();

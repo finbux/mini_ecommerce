@@ -25,12 +25,18 @@ if(isset($_GET['route'])){
                 require_once ('controller/products/show.php');
             }
             else{
-                     require_once ('controller/recette/all_products.php');
+                     require_once ('controller/products/all_products.php');
             }
         break;
 
         case $_GET['route'] == 'add_product':
             require_once ('controller/products/add_product.php');
+        break;
+
+        case $_GET['route'] == 'update_product':
+            
+                require_once ('controller/products/update_product.php');
+        
         break;
 
         case $_GET['route'] == 'delete_product':
