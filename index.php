@@ -34,7 +34,7 @@ if(isset($_GET['route'])){
         break;
 
         case $_GET['route'] == 'update_product':
-            
+
                 require_once ('controller/products/update_product.php');
         
         break;
@@ -68,10 +68,13 @@ if(isset($_GET['route'])){
         break;
 
         case $_GET['route'] == 'panier/delete':
-            require_once ('controller/panier/delete.php');
+            require_once ('controller/panier/delete_panier.php');
         break;
         
-
+        case $_GET['route'] == 'search':
+            require_once ('controller/products/search.php');
+        break;
+            
         default:
             die('404 PAGE NOT FOUND ');
         bnreak;

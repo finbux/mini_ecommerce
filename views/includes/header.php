@@ -28,9 +28,18 @@
                         <li class="nav-item">
                             <a class=" fw-bold" href="#">Notre catalogue</a>
                         </li>
-                        <li class="nav-item">
-                            <input type="text" class="form-control" placeholder="Rechercher un produit...">
+                            <li class="nav-item">
+                                <form class="search-bar d-flex align-items-stretch" role="search" action="index.php" method="get">
+                                    <input type="hidden" name="route" value="search">
+                                    <div class="search-field flex-grow-1 d-flex align-items-center">
+                                        <input type="search" name="search" placeholder="Que recherchez-vous ?" value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
+                                    </div>
+                                <button type="submit" name="btn-search" class="btn-search" aria-label="Lancer la recherche">
+                                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                                </button>
+                        </form> 
                         </li>
+
                         
                         <!-- Bloc Connexion / Inscription -->
                         <li class="nav-item text-center text-lg">

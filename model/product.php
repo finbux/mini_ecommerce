@@ -98,5 +98,19 @@ function delete($id){
 
 }
 
+function searchByTitle($terme)
+{
+    $db = connectToDatabase();
+
+    $sql = "SELECT * FROM produit
+            WHERE nom LIKE :terme
+            ORDER BY created_at DESC";
+
+    $req = $db->prepare($sql);
+    $req->execute([':terme' => '%' . $terme . '%']);
+
+    return $req->fetchAll();
+}
+
 
 ?>
