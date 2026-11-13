@@ -74,6 +74,14 @@ if(isset($_GET['route'])){
         case $_GET['route'] == 'search':
             require_once ('controller/products/search.php');
         break;
+
+        case $_GET['route'] == 'add_comment':
+            require_once('controller/products/add_comment.php');
+            break;
+
+        case $_GET['route'] == 'delete_comment':
+            require_once('controller/products/delete_comment.php');
+            break;
             
         default:
             die('404 PAGE NOT FOUND ');

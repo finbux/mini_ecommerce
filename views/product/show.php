@@ -80,5 +80,48 @@
         </div>
 
     </div>
+<section class="mt-5">
+    <h4 class="mb-3">Commentaires (<?= count($commentaires) ?>)</h4>
 
+    <?php if (isset($_SESSION['user'])): ?>
+        <form action="?route=add_comment" method="POST" class="mb-4">
+            <input type="hidden" name="produit_id" value="<?= (int) $produit['id'] ?>">
+            <textarea name="contenu" class="form-control mb-2" rows="3"
+                      maxlength="1000" required
+                      placeholder="Votre commentaire..."></textarea>
+            <button type="submit" class="btn btn-nexora">Publier</button>
+        </form>
+    <?php else: ?>
+        <div class="alert alert-info">
+            <a href="?route=login">Connectez-vous</a> pour laisser un commentaire.
+        </div>
+    <?php endif; ?>
+
+    <?php if (empty($commentaires)): ?>
+        <p class="text-muted">Aucun commentaire pour le moment.</p>
+    <?php else: ?>
+        <?php foreach ($commentaires as $com): ?>
+            <div class="card mb-2">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <strong><?= htmlspecialchars($com['pseudo']) ?></strong>
+                        <small class="text-muted">
+                            <?= date('d/m/Y à H:i', strtotime($com['created_at'])) ?>
+                        </small>
+                    </div>
+
+                    <p class="mb-0 mt-2"><?= nl2br(htmlspecialchars($com['contenu'])) ?></p>
+
+                    <?php if (isset($_SESSION['user']) && $_SESSION['user']['id'] == $com['user_id']): ?>
+                        <form action="?route=delete_comment" method="POST" class="mt-2"
+                              onsubmit="return confirm('Supprimer ce commentaire ?')">
+                            <input type="hidden" name="id" value="<?= (int) $com['id'] ?>">
+                            <button type="submit" class="btn btn-outline-danger btn-sm">Supprimer</button>
+                        </form>
+                    <?php endif; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</section>
 </div>

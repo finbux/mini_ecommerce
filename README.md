@@ -46,11 +46,11 @@
 - [ ] `Système de panier`
 - [ ] `CRUD produits`
 - [ ] `Système de recherche`
+- [ ] `Commentaire produit`
 
 
 
 ### ❌ Non réalisées / à améliorer
-- [ ] `Commentaire produit`
 - [ ] `Partie 5 : interaction sociale`
 
 
