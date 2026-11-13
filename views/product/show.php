@@ -51,8 +51,7 @@
 
         
                 <!-- Ajout au panier -->
-                <form action="ajouter-panier.php" method="POST">
-
+                <form action="?route=add_panier" method="GET">
                     <input
                         type="hidden"
                         name="id"

@@ -65,5 +65,18 @@ function findByUser($user){
     return $data;   
 }
 
+function delete($id){
+
+    $db = connectToDatabase();
+    
+    $sql = $db->prepare("DELETE FROM  produit WHERE id = :id");
+
+    $sql->bindValue(':id',$id);
+    $sql->execute();
+    
+    return ($sql->rowCount() > 0 ? true : false);
+
+}
+
 
 ?>

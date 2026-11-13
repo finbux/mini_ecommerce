@@ -31,6 +31,31 @@ if(isset($_GET['route'])){
             require_once ('controller/products/add_product.php');
         break;
 
+        case $_GET['route'] == 'delete_product':
+           
+                require_once ('controller/products/delete_product.php');
+            
+        break;
+
+        case $_GET['route'] == 'show_panier':
+           
+                require_once ('controller/panier/show.php');
+            
+        break;
+
+        case $_GET['route'] == 'add_panier':
+            if(isset($_GET['id'])){
+                 require_once('controller/panier/show.php');
+            }
+            else{
+                require_once('controller/home.php');
+            }
+               
+            
+        break;
+
+
+
         case $_GET['route'] == 'panier':
             require_once ('controller/panier/show.php');
         break;

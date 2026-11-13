@@ -81,7 +81,7 @@
                     <div class="product-bottom">
                         <span class="product-price"><?php echo $produit['prix'] ?>€</span>
                         <button class="cart-button" aria-label="Ajouter au panier">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                           <a href="?route=add_panier&id=<?= $produit['id'] ?>"><i class="fa-solid fa-cart-shopping"></i></a> 
                         </button>
                     </div>
                 </div>

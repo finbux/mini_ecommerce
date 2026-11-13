@@ -42,11 +42,35 @@
                             <p class="fw-bold mb-0">
                                 <?= number_format($produit['prix'], 2, ',', ' ') ?> €
                             </p>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="dialog" data-bs-target="#">
+                                    Modifier
+                            </button>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="dialog" data-bs-target="#deleteDialog">
+                                    Supprimer
+                            </button>
 
+                            <dialog class="dialog" id="deleteDialog">
+                                <div class="dialog-header">
+                                    <h1 class="dialog-title">Suppression produit </h1>
+                                  
+                                </div>
+                                <div class="dialog-body">
+                                    <p>Voulez vous supprimer le produit : <?= htmlspecialchars($produit['nom']) ?> ?</p>
+                                </div>
+                                <div class="dialog-footer">
+                                    <form action="?route=delete_product" method="post">
+                                        <input type="hidden" name="id"value="<?= htmlspecialchars($produit['id']) ?>">
+                                    
+                                        <button type="submit" class="btn btn-danger">Oui</button>
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="dialog">Annuler</button>
+                                    </form>
+                                </div>
+                            </dialog>
                         </div>
 
                     </div>
-
+                    
+                    
                 <?php endforeach; ?>
 
             </div>
