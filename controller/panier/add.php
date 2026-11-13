@@ -12,6 +12,9 @@ $id = isset($_POST['id']) ? (int) $_POST['id'] : 0;
 
 if ($id > 0 && findById($id)) {
     $_SESSION['panier'][$id] = ($_SESSION['panier'][$id] ?? 0) + 1;
+    
+    $_SESSION['message'] = "Votre panier a été mis à jour";
+    $_SESSION['type_message'] = "success";
 }
 
 header("Location: ?route=show_panier");

@@ -2,6 +2,7 @@
 
 if(isset($_GET['route'])){
     switch(true){
+        // route user
         case $_GET['route'] == 'login':
             require_once ('controller/user/login.php');
         break;
@@ -18,6 +19,7 @@ if(isset($_GET['route'])){
             require_once ('controller/user/profil.php');
         break;
         
+         //  ROUTE PRODUIT
         case $_GET['route'] == 'product':
             if(isset($_GET['id'])){
                 require_once ('controller/products/show.php');
@@ -36,7 +38,8 @@ if(isset($_GET['route'])){
                 require_once ('controller/products/delete_product.php');
             
         break;
-
+            
+        //Route panier
         case $_GET['route'] == 'show_panier':
            
                 require_once ('controller/panier/show.php');
@@ -54,10 +57,8 @@ if(isset($_GET['route'])){
      
         break;
 
-
-
-        case $_GET['route'] == 'panier':
-            require_once ('controller/panier/show.php');
+         case $_GET['route'] == 'panier/update':
+            require_once ('controller/panier/update_panier.php');
         break;
 
         case $_GET['route'] == 'panier/delete':

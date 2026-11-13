@@ -6,7 +6,7 @@
             <a class="btn btn-primary" href="index.php">Continuer mes achats</a>
         </div>
     <?php else: ?>
-        <form method="post" action="?route=update_panier">
+        <form method="post" action="?route=panier/update">
             <div class="card shadow-sm mb-4">
                 <div class="table-responsive">
                     <table class="table table-hover align-middle mb-0">
