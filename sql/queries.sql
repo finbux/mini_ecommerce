@@ -32,3 +32,13 @@ CREATE TABLE commentaire (
     Foreign Key (user_id) REFERENCES user (id),
     Foreign Key (produit_id) REFERENCES produit (id)
 )
+
+CREATE TABLE commentaires (
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    produit_id  INT NOT NULL,
+    user_id     INT NOT NULL,
+    contenu     TEXT NOT NULL,
+    created_at  DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (produit_id) REFERENCES produit(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id)    REFERENCES user(id)    ON DELETE CASCADE
+);

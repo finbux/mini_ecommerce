@@ -44,13 +44,13 @@
 - [ ] `Ajout de produit, affichage d'un produit et de tout les produits`
 - [ ] `Front end`
 - [ ] `Système de panier`
+- [ ] `CRUD produits`
+- [ ] `Système de recherche`
 
 
 
 ### ❌ Non réalisées / à améliorer
-
-- [ ] `CRUD à finir`
-- [ ] `Système de recherche`
+- [ ] `Commentaire produit`
 - [ ] `Partie 5 : interaction sociale`
 
 
