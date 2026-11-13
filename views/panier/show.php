@@ -6,7 +6,7 @@
             <a class="btn btn-primary" href="index.php">Continuer mes achats</a>
         </div>
     <?php else: ?>
-        <form method="post" action="panier.php">
+        <form method="post" action="?route=update_panier">
             <div class="card shadow-sm mb-4">
                 <div class="table-responsive">
                     <table class="table table-hover align-middle mb-0">
@@ -33,10 +33,15 @@
                                     </td>
                                     <td class="text-end fw-semibold"><?= number_format($ligne['sous_total'], 2, ',', ' ') ?> €</td>
                                     <td class="text-center">
-                                        <a href="panier.php?action=supprimer&id=<?= $ligne['id'] ?>"
-                                           class="btn btn-outline-danger btn-sm">
-                                            Supprimer
-                                        </a>
+                                        <button type="submit"
+                                                class="btn btn-outline-danger btn-sm"
+                                                form="form-supprimer"
+                                                formaction="?route=remove_product"
+                                                name="id"
+                                                value="<?= $ligne['id'] ?>"
+                                                onclick="return confirm('Retirer ce produit du panier ?')">
+                                            <i class="fa-solid fa-trash"></i> Supprimer
+                                        </button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -59,13 +64,15 @@
  
                 <div class="d-flex flex-wrap gap-2">
                     <a class="btn btn-outline-danger"
-                       href="panier.php?action=vider"
+                       href="?route=panier/delete"
                        onclick="return confirm('Vider le panier ?')">Vider le panier</a>
                     <button type="submit" class="btn btn-secondary">Mettre à jour</button>
                     <a class="btn btn-success" href="commande.php">Valider la commande</a>
                 </div>
             </div>
+            
         </form>
+        <form id="form-supprimer" method="POST"></form>
  
     <?php endif; ?>
 

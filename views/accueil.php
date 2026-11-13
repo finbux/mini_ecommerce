@@ -80,9 +80,19 @@
                     <h3><?php echo $produit['nom'] ?></h3>
                     <div class="product-bottom">
                         <span class="product-price"><?php echo $produit['prix'] ?>€</span>
-                        <button class="cart-button" aria-label="Ajouter au panier">
-                           <a href="?route=add_panier&id=<?= $produit['id'] ?>"><i class="fa-solid fa-cart-shopping"></i></a> 
+                         <form action="?route=add_panier" method="POST">
+                            <input
+                                type="hidden"
+                                name="id"
+                                value="<?= (int)$produit['id'] ?>"
+                            >
+
+                            <button type="submit" class="cart-button" aria-label="Ajouter au panier">
+                          <i class="fa-solid fa-cart-shopping"></i>
                         </button>
+
+                        </form>
+                        
                     </div>
                 </div>
             </a>

@@ -52,12 +52,19 @@
                         </li>
 
                         <!-- Icône Panier -->
+                       <?php
+                        $nbProduits = isset($_SESSION['panier']) ? array_sum($_SESSION['panier']) : 0;
+                        ?>
+
                         <li class="nav-item text-center">
-                            <a href="?route=panier" class="nav-link position-relative px-2">
-                                <i class="fa-solid fa-cart-shopping fs-4 "></i>
-                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem;">
-                                    0
-                                </span>
+                            <a href="?route=show_panier" class="nav-link position-relative px-2">
+                                <i class="fa-solid fa-cart-shopping fs-4"></i>
+
+                                <?php if ($nbProduits > 0): ?>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger p-2" >
+                                        <?= $nbProduits ?>
+                                    </span>
+                                <?php endif; ?>
                             </a>
                         </li>
                     </ul>

@@ -51,7 +51,7 @@
 
         
                 <!-- Ajout au panier -->
-                <form action="?route=add_panier" method="GET">
+                <form action="?route=add_panier" method="POST">
                     <input
                         type="hidden"
                         name="id"

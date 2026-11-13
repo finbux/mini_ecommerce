@@ -39,6 +39,7 @@ function getAllProducts()
 
 }
 
+
 function findById($id){
 
     $db = connectToDatabase();
