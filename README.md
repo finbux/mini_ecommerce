@@ -43,13 +43,14 @@
 - [ ] `Création de compte, login`
 - [ ] `Ajout de produit, affichage d'un produit et de tout les produits`
 - [ ] `Front end`
+- [ ] `Système de panier`
 
 
 
 ### ❌ Non réalisées / à améliorer
 
-- [ ] `Système de panier`
 - [ ] `CRUD à finir`
+- [ ] `Système de recherche`
 - [ ] `Partie 5 : interaction sociale`
 
 
